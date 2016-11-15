@@ -2,8 +2,8 @@
 //  AddViewController.swift
 //  Swift通讯录
 //
-//  Created by lanou on 15/11/27.
-//  Copyright © 2015年 lanou. All rights reserved.
+//  Created by lmd on 15/11/27.
+//  Copyright © 2015年 lmd. All rights reserved.
 //
 
 import UIKit
@@ -24,18 +24,18 @@ class AddViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor=UIColor.whiteColor()
+        self.view.backgroundColor=UIColor.white
         
-        self.nameLabel = UILabel(frame: CGRectMake(20,100,80,40))
-        nameLabel.textColor=UIColor.blackColor()
+        self.nameLabel = UILabel(frame: CGRect(x: 20,y: 100,width: 80,height: 40))
+        nameLabel.textColor=UIColor.black
         nameLabel.text = "姓名"
         self.view.addSubview(nameLabel)
-        self.nameLabel.textAlignment = NSTextAlignment.Center
+        self.nameLabel.textAlignment = NSTextAlignment.center
         
         
         
         self.nameTextField = UITextField()
-        self.nameTextField.frame = CGRectMake(120, 100, 200, 40)
+        self.nameTextField.frame = CGRect(x: 120, y: 100, width: 200, height: 40)
         if updataModel == nil
         {
             self.nameTextField.placeholder = "  请出入姓名"
@@ -46,21 +46,21 @@ class AddViewController: UIViewController {
         }
         
         self.nameTextField.layer.cornerRadius=10
-        self.nameTextField.layer.borderColor=UIColor.lightGrayColor().CGColor
+        self.nameTextField.layer.borderColor=UIColor.lightGray.cgColor
         self.nameTextField.layer.borderWidth=2
         self.view.addSubview(self.nameTextField)
         
         
-        self.phoneLabel = UILabel(frame: CGRectMake(20,180,80,40))
-        phoneLabel.textColor=UIColor.blackColor()
+        self.phoneLabel = UILabel(frame: CGRect(x: 20,y: 180,width: 80,height: 40))
+        phoneLabel.textColor=UIColor.black
         phoneLabel.text = "电话"
         self.view.addSubview(phoneLabel)
-        self.phoneLabel.textAlignment = NSTextAlignment.Center
+        self.phoneLabel.textAlignment = NSTextAlignment.center
         
         
         
         self.phoneTextField = UITextField()
-        self.phoneTextField.frame = CGRectMake(120, 180, 200, 40)
+        self.phoneTextField.frame = CGRect(x: 120, y: 180, width: 200, height: 40)
         if updataModel == nil
         {
             self.phoneTextField.placeholder = "  请出入电话"
@@ -71,24 +71,24 @@ class AddViewController: UIViewController {
         }
         
         self.phoneTextField.layer.cornerRadius=10
-        self.phoneTextField.layer.borderColor=UIColor.lightGrayColor().CGColor
+        self.phoneTextField.layer.borderColor=UIColor.lightGray.cgColor
         self.phoneTextField.layer.borderWidth=2
         self.view.addSubview(self.phoneTextField)
         
         
         
         self.button = UIButton()
-        self.button.frame = CGRectMake(20, 260, self.view.frame.size.width-40, 30)
-        self.button.backgroundColor=UIColor.redColor()
-        self.button.setTitle("保存", forState: UIControlState.Normal)
+        self.button.frame = CGRect(x: 20, y: 260, width: self.view.frame.size.width-40, height: 30)
+        self.button.backgroundColor=UIColor.red
+        self.button.setTitle("保存", for: UIControlState())
         self.view.addSubview(self.button)
-        self.button.addTarget(self, action: #selector(AddViewController.addButtonAction(_:)), forControlEvents: UIControlEvents.TouchUpInside)
+        self.button.addTarget(self, action: #selector(AddViewController.addButtonAction(_:)), for: UIControlEvents.touchUpInside)
         
         
         // Do any additional setup after loading the view.
     }
 
-    func addButtonAction(sender:UIButton)
+    func addButtonAction(_ sender:UIButton)
     {
     
         let model : AddressModel = AddressModel(name: self.nameTextField.text!, phone: self.phoneTextField.text!)
@@ -107,7 +107,7 @@ class AddViewController: UIViewController {
         
         
         
-        self.navigationController?.popToRootViewControllerAnimated(true)
+        self.navigationController?.popToRootViewController(animated: true)
     
     }
     

@@ -2,8 +2,8 @@
 //  ViewController.swift
 //  Swift通讯录
 //
-//  Created by lanou on 15/11/27.
-//  Copyright © 2015年 lanou. All rights reserved.
+//  Created by lmd on 15/11/27.
+//  Copyright © 2015年 lmd. All rights reserved.
 //
 
 import UIKit
@@ -22,17 +22,17 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         NSLog("%@", DDPerson().name)
         
         self.navigationItem.title="通讯录"
-        self.tableView = UITableView(frame: self.view.frame,style: UITableViewStyle.Plain)
+        self.tableView = UITableView(frame: self.view.frame,style: UITableViewStyle.plain)
         self.view.addSubview(self.tableView)
         self.tableView.dataSource=self
         self.tableView.delegate=self
-        self.tableView.registerClass(addressTableViewCell.self, forCellReuseIdentifier: "cell")
+        self.tableView.register(addressTableViewCell.self, forCellReuseIdentifier: "cell")
         
-        let rightItem : UIBarButtonItem = UIBarButtonItem(title: "添加", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(ViewController.addButtonAction))
+        let rightItem : UIBarButtonItem = UIBarButtonItem(title: "添加", style: UIBarButtonItemStyle.plain, target: self, action: #selector(ViewController.addButtonAction))
         
         self.navigationItem.rightBarButtonItem=rightItem
         
-        self.leftItem = UIBarButtonItem(title: "编辑", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(ViewController.setEdit))
+        self.leftItem = UIBarButtonItem(title: "编辑", style: UIBarButtonItemStyle.plain, target: self, action: #selector(ViewController.setEdit))
         
         self.navigationItem.leftBarButtonItem=leftItem;
         
@@ -41,7 +41,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     //MARK: 编辑按钮点击方法
     func setEdit()
     {
-        if self.tableView.editing == true
+        if self.tableView.isEditing == true
         {
             self.leftItem.title = "编辑"
             self.tableView.setEditing(false, animated: true)
@@ -76,10 +76,10 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     }
     
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
        
-        let cell : addressTableViewCell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! addressTableViewCell
+        let cell : addressTableViewCell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! addressTableViewCell
         
         let model : AddressModel = self.modelArray[indexPath.row] as! AddressModel
         
@@ -91,52 +91,52 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     
     }
     
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         
         return 1
         
     }
     
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         return self.modelArray.count
     }
     
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
         return 100
     }
     
 
     //删除
-    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         
-        if editingStyle == UITableViewCellEditingStyle.Delete
+        if editingStyle == UITableViewCellEditingStyle.delete
         {
             addressManager.shareManager().deleteObjectToAction(indexPath.row)
             
             self.modelArray = NSMutableArray()
             self.modelArray=addressManager.shareManager().dataArr
-                tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Top)
+                tableView.deleteRows(at: [indexPath], with: UITableViewRowAnimation.top)
         }
         
     }
     
-    func tableView(tableView: UITableView, moveRowAtIndexPath sourceIndexPath: NSIndexPath, toIndexPath destinationIndexPath: NSIndexPath) {
+    func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
         
         addressManager.shareManager().moveObjectToAction(sourceIndexPath.row, toIndex: destinationIndexPath.row)
         
         self.modelArray = NSMutableArray()
         self.modelArray=addressManager.shareManager().dataArr
-           tableView.moveRowAtIndexPath(sourceIndexPath, toIndexPath: destinationIndexPath)
+           tableView.moveRow(at: sourceIndexPath, to: destinationIndexPath)
         
         
     }
     
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let model : AddressModel = addressManager.shareManager().dataArr.objectAtIndex(indexPath.row) as! AddressModel
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let model : AddressModel = addressManager.shareManager().dataArr.object(at: indexPath.row) as! AddressModel
 
         let num = indexPath.row;
         

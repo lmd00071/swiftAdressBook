@@ -211,20 +211,23 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0710;
-				ORGANIZATIONNAME = lanou;
+				ORGANIZATIONNAME = lmd;
 				TargetAttributes = {
 					3F66C7FC1C07E4C500C971FF = {
 						CreatedOnToolsVersion = 7.1;
 						DevelopmentTeam = 2MDNQK6969;
+						LastSwiftMigration = 0810;
 					};
 					3F66C8101C07E4C500C971FF = {
 						CreatedOnToolsVersion = 7.1;
 						DevelopmentTeam = 2MDNQK6969;
+						LastSwiftMigration = 0810;
 						TestTargetID = 3F66C7FC1C07E4C500C971FF;
 					};
 					3F66C81B1C07E4C500C971FF = {
 						CreatedOnToolsVersion = 7.1;
 						DevelopmentTeam = 2MDNQK6969;
+						LastSwiftMigration = 0810;
 						TestTargetID = 3F66C7FC1C07E4C500C971FF;
 					};
 				};
@@ -438,6 +441,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Swift通讯录/Swift通讯录-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -452,6 +456,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.lanou3g.Swift---";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Swift通讯录/Swift通讯录-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -463,6 +468,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.lanou3g.Swift---Tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Swift通讯录.app/Swift通讯录";
 			};
 			name = Debug;
@@ -475,6 +481,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.lanou3g.Swift---Tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Swift通讯录.app/Swift通讯录";
 			};
 			name = Release;
@@ -486,6 +493,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.lanou3g.Swift---UITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = "Swift通讯录";
 				USES_XCTRUNNER = YES;
 			};
@@ -498,6 +506,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.lanou3g.Swift---UITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = "Swift通讯录";
 				USES_XCTRUNNER = YES;
 			};

@@ -3,7 +3,7 @@
 //  Swift通讯录
 //
 //  Created by 嗒嗒修车 on 16/8/20.
-//  Copyright © 2016年 lanou. All rights reserved.
+//  Copyright © 2016年 lmd. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>

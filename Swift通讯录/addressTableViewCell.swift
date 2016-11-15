@@ -2,8 +2,8 @@
 //  addressTableViewCell.swift
 //  Swift通讯录
 //
-//  Created by lanou on 15/11/27.
-//  Copyright © 2015年 lanou. All rights reserved.
+//  Created by lmd on 15/11/27.
+//  Copyright © 2015年 lmd. All rights reserved.
 //
 
 import UIKit
@@ -20,10 +20,10 @@ class addressTableViewCell: UITableViewCell {
         
         self.nameLabel = UILabel()
         self.phoneLabel = UILabel()
-        self.nameLabel.frame = CGRectMake(20, 10, 200, 40)
-        self.phoneLabel.frame = CGRectMake(20, 60, 200, 40)
-        self.nameLabel.backgroundColor = UIColor.clearColor()
-        self.phoneLabel.backgroundColor = UIColor.clearColor()
+        self.nameLabel.frame = CGRect(x: 20, y: 10, width: 200, height: 40)
+        self.phoneLabel.frame = CGRect(x: 20, y: 60, width: 200, height: 40)
+        self.nameLabel.backgroundColor = UIColor.clear
+        self.phoneLabel.backgroundColor = UIColor.clear
         self.contentView.addSubview(nameLabel)
         self.contentView.addSubview(phoneLabel)
         
@@ -43,7 +43,7 @@ class addressTableViewCell: UITableViewCell {
      
     }
 
-    override func setSelected(selected: Bool, animated: Bool) {
+    override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
